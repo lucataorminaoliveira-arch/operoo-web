@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "dashboard": "Cruscotto",
+    "staff": "Personale",
+    "appointments": "Appuntamenti",
+    "clients": "Clienti",
+    "marketing": "Marketing",
+    "shop": "Negozio"
+  },
+  "auth": {
+    "login": "Accedi",
+    "register": "Crea Account",
+    "logout": "Esci",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Conferma Password",
+    "name": "Nome Completo",
+    "forgotPassword": "Password dimenticata?",
+    "noAccount": "Non hai un account?",
+    "hasAccount": "Hai gia un account?",
+    "signInGoogle": "Continua con Google",
+    "orContinueWith": "o continua con",
+    "welcomeBack": "Bentornato",
+    "createAccount": "Inizia con Operoo",
+    "loginSubtitle": "Accedi per gestire la tua struttura",
+    "registerSubtitle": "Crea il tuo account per iniziare"
+  },
+  "dashboard": {
+    "title": "Cruscotto",
+    "welcome": "Bentornato",
+    "totalStaff": "Personale Totale",
+    "activeGuests": "Ospiti Attivi",
+    "todayAppointments": "Appuntamenti di Oggi",
+    "monthlyRevenue": "Entrate Mensili",
+    "recentActivity": "Attivita Recente",
+    "quickActions": "Azioni Rapide",
+    "addStaff": "Aggiungi Personale",
+    "newAppointment": "Nuovo Appuntamento",
+    "viewReports": "Visualizza Report",
+    "noActivity": "Nessuna attivita recente"
+  },
+  "guest": {
+    "welcome": "Benvenuto, Ospite",
+    "subtitle": "Accedi ai tuoi servizi e informazioni",
+    "services": "Servizi",
+    "info": "Informazioni",
+    "appointments": "I Miei Appuntamenti",
+    "profile": "Il Mio Profilo"
+  },
+  "common": {
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "search": "Cerca",
+    "loading": "Caricamento...",
+    "noResults": "Nessun risultato trovato",
+    "back": "Indietro",
+    "next": "Avanti",
+    "submit": "Invia"
+  }
+}

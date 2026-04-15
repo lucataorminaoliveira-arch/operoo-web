@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "staff": "Staff",
+    "appointments": "Appointments",
+    "clients": "Clients",
+    "marketing": "Marketing",
+    "shop": "Shop"
+  },
+  "auth": {
+    "login": "Sign In",
+    "register": "Create Account",
+    "logout": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Full Name",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signInGoogle": "Continue with Google",
+    "orContinueWith": "or continue with",
+    "welcomeBack": "Welcome back",
+    "createAccount": "Get started with Operoo",
+    "loginSubtitle": "Sign in to manage your property",
+    "registerSubtitle": "Create your account to get started"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "totalStaff": "Total Staff",
+    "activeGuests": "Active Guests",
+    "todayAppointments": "Today's Appointments",
+    "monthlyRevenue": "Monthly Revenue",
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions",
+    "addStaff": "Add Staff",
+    "newAppointment": "New Appointment",
+    "viewReports": "View Reports",
+    "noActivity": "No recent activity"
+  },
+  "guest": {
+    "welcome": "Welcome, Guest",
+    "subtitle": "Access your services and information",
+    "services": "Services",
+    "info": "Information",
+    "appointments": "My Appointments",
+    "profile": "My Profile"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit"
+  }
+}
