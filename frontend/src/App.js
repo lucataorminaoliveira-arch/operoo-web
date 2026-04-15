@@ -16,6 +16,7 @@ import MarketingPage from '@/pages/MarketingPage';
 import ShopPage from '@/pages/ShopPage';
 import TeamPage from '@/pages/TeamPage';
 import FrontDeskPage from '@/pages/FrontDeskPage';
+import QRCodesPage from '@/pages/QRCodesPage';
 import TasksPage from '@/pages/TasksPage';
 import CalendarPage from '@/pages/CalendarPage';
 import ProfilePage from '@/pages/ProfilePage';
@@ -87,6 +88,7 @@ function AppRouter() {
 
         {/* Admin-only routes */}
         <Route path="/front-desk" element={<AdminRoute><FrontDeskPage /></AdminRoute>} />
+        <Route path="/qr-codes" element={<AdminRoute><QRCodesPage /></AdminRoute>} />
         <Route path="/team" element={<AdminRoute><TeamPage /></AdminRoute>} />
         <Route path="/staff" element={<AdminRoute><StaffPage /></AdminRoute>} />
         <Route path="/appointments" element={<AdminRoute><AppointmentsPage /></AdminRoute>} />

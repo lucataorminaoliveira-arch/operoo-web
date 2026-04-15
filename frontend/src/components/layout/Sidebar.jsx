@@ -5,7 +5,7 @@ import { Logo } from '@/components/Logo';
 import {
   LayoutDashboard, Users, Calendar, UserCircle, Megaphone,
   ShoppingBag, LogOut, ChevronLeft, ChevronRight,
-  ListChecks, CalendarDays, User, UsersRound, MessageSquare,
+  ListChecks, CalendarDays, User, UsersRound, MessageSquare, QrCode,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 const adminNav = [
   { key: 'dashboard', icon: LayoutDashboard, path: '/dashboard' },
   { key: 'frontDesk', icon: MessageSquare, path: '/front-desk' },
+  { key: 'qrCodes', icon: QrCode, path: '/qr-codes' },
   { key: 'team', icon: UsersRound, path: '/team' },
   { key: 'staff', icon: Users, path: '/staff' },
   { key: 'appointments', icon: Calendar, path: '/appointments' },

@@ -10,7 +10,8 @@
     "calendar": "Calendar",
     "profile": "Profile",
     "team": "Team",
-    "frontDesk": "Front Desk"
+    "frontDesk": "Front Desk",
+    "qrCodes": "QR Codes"
   },
   "auth": {
     "login": "Sign In",
@@ -119,6 +120,23 @@
     "selectChat": "Select a conversation to start",
     "typePlaceholder": "Type a reply...",
     "noConversations": "No conversations yet"
+  },
+  "qrCodes": {
+    "title": "QR Codes",
+    "subtitle": "Generate and manage guest access codes",
+    "generate": "Generate QR",
+    "generateDesc": "Create a QR code for a room or table",
+    "type": "Type",
+    "room": "Room",
+    "table": "Table",
+    "rooms": "Rooms",
+    "tables": "Tables",
+    "roomNumber": "Room Number",
+    "tableNumber": "Table Number",
+    "link": "Guest Link",
+    "created": "Created",
+    "noCodes": "No QR codes generated yet",
+    "selectPreview": "Select a QR code to preview"
   },
   "team": {
     "title": "Team",
