@@ -11,7 +11,7 @@
     "profile": "Profile",
     "team": "Team",
     "frontDesk": "Front Desk",
-    "qrCodes": "QR Codes"
+    "qrCodes": "Guest QR"
   },
   "auth": {
     "login": "Sign In",
@@ -122,21 +122,22 @@
     "noConversations": "No conversations yet"
   },
   "qrCodes": {
-    "title": "QR Codes",
-    "subtitle": "Generate and manage guest access codes",
-    "generate": "Generate QR",
-    "generateDesc": "Create a QR code for a room or table",
-    "type": "Type",
-    "room": "Room",
-    "table": "Table",
-    "rooms": "Rooms",
-    "tables": "Tables",
-    "roomNumber": "Room Number",
-    "tableNumber": "Table Number",
+    "title": "Guest QR Code",
+    "subtitle": "One QR code for all guests — they identify by room or table number",
+    "guestAccess": "Universal Guest Access",
+    "universalDesc": "Print or display this QR code at your property. Guests scan it and enter their room or table number to connect with your front desk.",
     "link": "Guest Link",
-    "created": "Created",
-    "noCodes": "No QR codes generated yet",
-    "selectPreview": "Select a QR code to preview"
+    "copy": "Copy",
+    "copied": "Copied",
+    "download": "Download QR Code",
+    "howItWorks": "How It Works",
+    "step1Title": "Guest scans QR",
+    "step1Desc": "Place the QR code at reception, rooms, or tables.",
+    "step2Title": "Enters room or table",
+    "step2Desc": "Guest types their room or table number to identify.",
+    "step3Title": "Chats with front desk",
+    "step3Desc": "Instant connection — no app, no login required.",
+    "tip": "Print this QR code and place it at your front desk, inside rooms, or on tables. All guests use the same code — they identify themselves by entering their room or table number."
   },
   "team": {
     "title": "Team",

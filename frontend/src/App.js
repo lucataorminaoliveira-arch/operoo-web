@@ -79,6 +79,7 @@ function AppRouter() {
       <Route path="/register" element={<PublicRoute><RegisterPage /></PublicRoute>} />
 
       {/* Guest route — direct QR access, no auth */}
+      <Route path="/guest" element={<GuestPage />} />
       <Route path="/guest/:token" element={<GuestPage />} />
 
       {/* Protected routes with layout */}

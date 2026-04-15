@@ -11,7 +11,7 @@
     "profile": "Profilo",
     "team": "Team",
     "frontDesk": "Front Desk",
-    "qrCodes": "QR Codes"
+    "qrCodes": "QR Ospiti"
   },
   "auth": {
     "login": "Accedi",
@@ -122,21 +122,22 @@
     "noConversations": "Nessuna conversazione"
   },
   "qrCodes": {
-    "title": "QR Codes",
-    "subtitle": "Genera e gestisci i codici di accesso ospiti",
-    "generate": "Genera QR",
-    "generateDesc": "Crea un QR code per una stanza o un tavolo",
-    "type": "Tipo",
-    "room": "Stanza",
-    "table": "Tavolo",
-    "rooms": "Stanze",
-    "tables": "Tavoli",
-    "roomNumber": "Numero Stanza",
-    "tableNumber": "Numero Tavolo",
-    "link": "Link Ospite",
-    "created": "Creato",
-    "noCodes": "Nessun QR code generato",
-    "selectPreview": "Seleziona un QR code per anteprima"
+    "title": "QR Code Ospiti",
+    "subtitle": "Un unico QR code per tutti gli ospiti — si identificano con numero stanza o tavolo",
+    "guestAccess": "Accesso Ospiti Universale",
+    "universalDesc": "Stampa o esponi questo QR code nella tua struttura. Gli ospiti lo scannerizzano e inseriscono il numero di stanza o tavolo per contattare il front desk.",
+    "link": "Link Ospiti",
+    "copy": "Copia",
+    "copied": "Copiato",
+    "download": "Scarica QR Code",
+    "howItWorks": "Come Funziona",
+    "step1Title": "L'ospite scansiona il QR",
+    "step1Desc": "Posiziona il QR code alla reception, nelle stanze o sui tavoli.",
+    "step2Title": "Inserisce stanza o tavolo",
+    "step2Desc": "L'ospite digita il numero di stanza o tavolo per identificarsi.",
+    "step3Title": "Chatta con il front desk",
+    "step3Desc": "Connessione istantanea — nessuna app, nessun login.",
+    "tip": "Stampa questo QR code e posizionalo al front desk, nelle stanze o sui tavoli. Tutti gli ospiti usano lo stesso codice — si identificano inserendo il loro numero di stanza o tavolo."
   },
   "team": {
     "title": "Team",
