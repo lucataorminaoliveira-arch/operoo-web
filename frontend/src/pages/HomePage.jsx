@@ -137,7 +137,7 @@ export default function HomePage() {
       {/* ─── Nav ─── */}
       <nav className="sticky top-0 z-50 border-b bg-card/80 backdrop-blur-lg" data-testid="homepage-nav">
         <div className="mx-auto max-w-6xl flex h-14 items-center justify-between px-5">
-          <span className="text-xl font-bold tracking-tight text-primary" data-testid="home-brand">Operoo</span>
+          <img src="/operoo-logo.png" alt="Operoo" className="h-8 rounded" data-testid="home-brand" />
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" onClick={() => navigate('/login')} data-testid="nav-signin">
               Sign In
@@ -382,7 +382,7 @@ export default function HomePage() {
       {/* ─── Footer ─── */}
       <footer className="border-t py-8" data-testid="homepage-footer">
         <div className="mx-auto max-w-6xl px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-sm font-bold text-primary">Operoo</span>
+          <img src="/operoo-logo.png" alt="Operoo" className="h-7 rounded" />
           <p className="text-xs text-muted-foreground">&copy; 2026 Operoo. Built for hospitality.</p>
         </div>
       </footer>

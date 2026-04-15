@@ -50,9 +50,7 @@ export default function Sidebar({ collapsed, onToggle }) {
       {/* Brand */}
       <div className="flex h-14 items-center justify-between px-4 border-b">
         {!collapsed && (
-          <span className="text-xl font-bold tracking-tight text-primary" data-testid="brand-name">
-            Operoo
-          </span>
+          <img src="/operoo-logo.png" alt="Operoo" className="h-7 rounded" data-testid="brand-name" />
         )}
         <Button
           variant="ghost"

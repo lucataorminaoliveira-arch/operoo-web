@@ -36,9 +36,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Brand */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold tracking-tight text-primary" data-testid="login-brand">
-            Operoo
-          </h1>
+          <img src="/operoo-logo.png" alt="Operoo" className="h-10 rounded" data-testid="login-brand" />
           <p className="mt-2 text-sm text-muted-foreground">{t('auth.loginSubtitle')}</p>
         </div>
 

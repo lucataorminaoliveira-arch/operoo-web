@@ -37,9 +37,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         {/* Brand */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold tracking-tight text-primary" data-testid="register-brand">
-            Operoo
-          </h1>
+          <img src="/operoo-logo.png" alt="Operoo" className="h-10 rounded" data-testid="register-brand" />
           <p className="mt-2 text-sm text-muted-foreground">{t('auth.registerSubtitle')}</p>
         </div>
 

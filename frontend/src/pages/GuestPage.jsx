@@ -23,7 +23,7 @@ function RoomEntry({ onSubmit }) {
     <div className="min-h-screen flex flex-col bg-[hsl(var(--sidebar))]" data-testid="guest-room-entry">
       {/* Header */}
       <header className="border-b bg-card px-5 py-4">
-        <span className="text-lg font-bold text-primary">Operoo</span>
+        <img src="/operoo-logo.png" alt="Operoo" className="h-7 rounded" />
       </header>
 
       {/* Content */}
