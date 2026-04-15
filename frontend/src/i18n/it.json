@@ -11,7 +11,8 @@
     "profile": "Profilo",
     "team": "Team",
     "frontDesk": "Front Desk",
-    "qrCodes": "QR Ospiti"
+    "qrCodes": "QR Ospiti",
+    "staffClockIn": "Timbra Entrata"
   },
   "auth": {
     "login": "Accedi",
@@ -152,6 +153,20 @@
     "step3Title": "Chatta con il front desk",
     "step3Desc": "Connessione istantanea — nessuna app, nessun login.",
     "tip": "Stampa questo QR code e posizionalo al front desk, nelle stanze o sui tavoli. Tutti gli ospiti usano lo stesso codice — si identificano inserendo il loro numero di stanza o tavolo."
+  },
+  "staffQR": {
+    "title": "QR Timbra Entrata",
+    "subtitle": "Esponi questo QR code per il personale da scannerizzare all'inizio del turno",
+    "label": "QR Timbra Entrata",
+    "description": "Scansiona per timbrare l'entrata. Il personale scansiona questo QR code all'inizio del turno per registrare la presenza.",
+    "refreshNote": "Si aggiorna ogni 24 ore",
+    "link": "Link Entrata",
+    "download": "Scarica",
+    "print": "Stampa",
+    "instructions": "Come Usarlo",
+    "instruction1": "Stampa ed esponi vicino all'ingresso personale o alla sala pausa",
+    "instruction2": "Il personale scansiona il QR code col telefono per timbrare l'entrata",
+    "instruction3": "Il QR code si aggiorna giornalmente per sicurezza"
   },
   "team": {
     "title": "Team",

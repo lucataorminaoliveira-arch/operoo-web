@@ -11,7 +11,8 @@
     "profile": "Profile",
     "team": "Team",
     "frontDesk": "Front Desk",
-    "qrCodes": "Guest QR"
+    "qrCodes": "Guest QR",
+    "staffClockIn": "Staff Clock-in"
   },
   "auth": {
     "login": "Sign In",
@@ -152,6 +153,20 @@
     "step3Title": "Chats with front desk",
     "step3Desc": "Instant connection — no app, no login required.",
     "tip": "Print this QR code and place it at your front desk, inside rooms, or on tables. All guests use the same code — they identify themselves by entering their room or table number."
+  },
+  "staffQR": {
+    "title": "Staff Clock-in QR",
+    "subtitle": "Display this QR code for staff to scan when starting their shift",
+    "label": "Staff Clock-in QR",
+    "description": "Scan to clock in your shift. Staff members scan this QR code at the start of their shift to register attendance.",
+    "refreshNote": "Updates every 24 hours",
+    "link": "Clock-in Link",
+    "download": "Download",
+    "print": "Print",
+    "instructions": "How to Use",
+    "instruction1": "Print and display near the staff entrance or break room",
+    "instruction2": "Staff scan the QR code with their phone to clock in",
+    "instruction3": "The QR code refreshes daily for security"
   },
   "team": {
     "title": "Team",
