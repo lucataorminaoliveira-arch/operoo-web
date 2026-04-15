@@ -72,14 +72,23 @@ module.exports = {
                                 }
                         },
                         'scan-line': {
-                                '0%, 100%': { top: '8px' },
-                                '50%': { top: 'calc(100% - 10px)' }
+                                '0%, 100%': { top: '12px', opacity: '0.4' },
+                                '50%': { top: 'calc(100% - 14px)', opacity: '1' }
+                        },
+                        'scale-in': {
+                                '0%': { opacity: '0', transform: 'scale(0.8)' },
+                                '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        'pop': {
+                                '0%': { transform: 'scale(0.5)' },
+                                '70%': { transform: 'scale(1.1)' },
+                                '100%': { transform: 'scale(1)' }
                         }
                 },
                 animation: {
                         'accordion-down': 'accordion-down 0.2s ease-out',
                         'accordion-up': 'accordion-up 0.2s ease-out',
-                        'scan-line': 'scan-line 2s ease-in-out infinite'
+                        'scan-line': 'scan-line 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite'
                 }
         }
   },

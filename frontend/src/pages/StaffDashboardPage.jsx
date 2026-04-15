@@ -18,13 +18,13 @@ function QRScannerOverlay({ onSuccess, onClose }) {
 
   useEffect(() => {
     if (phase !== 'scanning') return;
-    const timer = setTimeout(() => setPhase('success'), 2500);
+    const timer = setTimeout(() => setPhase('success'), 1500);
     return () => clearTimeout(timer);
   }, [phase]);
 
   useEffect(() => {
     if (phase !== 'success') return;
-    const timer = setTimeout(() => onSuccess(), 1800);
+    const timer = setTimeout(() => onSuccess(), 1500);
     return () => clearTimeout(timer);
   }, [phase, onSuccess]);
 
@@ -33,7 +33,7 @@ function QRScannerOverlay({ onSuccess, onClose }) {
       {/* Top bar */}
       <div className="flex items-center justify-between px-5 pt-5 pb-3">
         <span className="text-white/80 text-sm font-medium">{t('clockIn.scanTitle')}</span>
-        <button onClick={onClose} className="text-white/60 hover:text-white" data-testid="scanner-close">
+        <button onClick={onClose} className="text-white/60 hover:text-white transition-colors" data-testid="scanner-close">
           <X className="h-5 w-5" />
         </button>
       </div>
@@ -43,24 +43,24 @@ function QRScannerOverlay({ onSuccess, onClose }) {
         {phase === 'scanning' ? (
           <div className="relative w-64 h-64" data-testid="scanner-frame">
             {/* Corner brackets */}
-            <div className="absolute top-0 left-0 w-10 h-10 border-t-[3px] border-l-[3px] border-primary rounded-tl-lg" />
-            <div className="absolute top-0 right-0 w-10 h-10 border-t-[3px] border-r-[3px] border-primary rounded-tr-lg" />
-            <div className="absolute bottom-0 left-0 w-10 h-10 border-b-[3px] border-l-[3px] border-primary rounded-bl-lg" />
-            <div className="absolute bottom-0 right-0 w-10 h-10 border-b-[3px] border-r-[3px] border-primary rounded-br-lg" />
-            {/* Scanning line */}
-            <div className="absolute left-3 right-3 h-0.5 bg-primary/80 animate-scan-line rounded-full" />
+            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-primary rounded-tl-xl" />
+            <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-primary rounded-tr-xl" />
+            <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-primary rounded-bl-xl" />
+            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-primary rounded-br-xl" />
+            {/* Scanning line with glow */}
+            <div className="absolute left-4 right-4 h-[1px] bg-primary animate-scan-line rounded-full shadow-[0_0_8px_2px_hsl(89,46%,48%,0.5)]" />
             {/* Center icon */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <QrCode className="h-12 w-12 text-white/10" />
+              <QrCode className="h-10 w-10 text-white/[0.06]" />
             </div>
           </div>
         ) : (
-          <div className="text-center" data-testid="scanner-success">
-            <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-primary">
+          <div className="text-center animate-[scale-in_0.35s_ease-out]" data-testid="scanner-success">
+            <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-primary animate-[pop_0.4s_ease-out]">
               <CheckCircle2 className="h-10 w-10 text-primary-foreground" />
             </div>
-            <h2 className="text-xl font-bold text-white mb-2">{t('clockIn.success')}</h2>
-            <p className="text-sm text-white/60">{t('clockIn.successDesc')}</p>
+            <h2 className="text-xl font-bold text-white mb-1">{t('clockIn.success')}</h2>
+            <p className="text-sm text-white/50">{t('clockIn.successDesc')}</p>
           </div>
         )}
       </div>
@@ -68,7 +68,7 @@ function QRScannerOverlay({ onSuccess, onClose }) {
       {/* Bottom text */}
       {phase === 'scanning' && (
         <div className="px-8 pb-10 text-center">
-          <p className="text-white/50 text-xs">{t('clockIn.scanInstruction')}</p>
+          <p className="text-white/40 text-xs">{t('clockIn.scanInstruction')}</p>
         </div>
       )}
     </div>
