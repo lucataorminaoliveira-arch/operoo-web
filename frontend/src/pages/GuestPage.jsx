@@ -43,7 +43,7 @@ function RoomEntry({ onSubmit }) {
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               type="text"
-              inputMode="numeric"
+              inputMode="text"
               value={room}
               onChange={(e) => setRoom(e.target.value)}
               placeholder={t('guest.roomPlaceholder')}
@@ -107,8 +107,8 @@ function Chat({ roomNumber, onBack }) {
         </Button>
         <div className="flex items-center gap-3 flex-1 min-w-0">
           <div className="relative shrink-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold">
-              R
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold">
+              FD
             </div>
             <div className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-card" />
           </div>

@@ -169,11 +169,11 @@
     "staffCount": "{{count}} staff members"
   },
   "guest": {
-    "enterRoom": "Enter your room number",
-    "enterRoomDesc": "To connect with reception, please enter your room number below.",
-    "roomPlaceholder": "e.g. 204",
+    "enterRoom": "Enter your room or table number",
+    "enterRoomDesc": "To connect with the front desk, enter your number below.",
+    "roomPlaceholder": "e.g. 204 or T12",
     "continue": "Continue",
-    "reception": "Reception",
+    "reception": "Front Desk",
     "online": "Online",
     "room": "Room",
     "typePlaceholder": "Type a message...",
