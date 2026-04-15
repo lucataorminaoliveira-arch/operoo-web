@@ -37,7 +37,44 @@
     "addStaff": "Aggiungi Personale",
     "newAppointment": "Nuovo Appuntamento",
     "viewReports": "Visualizza Report",
-    "noActivity": "Nessuna attivita recente"
+    "noActivity": "Nessuna attivita recente",
+    "viewAll": "Vedi Tutto"
+  },
+  "staff": {
+    "title": "Gestione Personale",
+    "subtitle": "Gestisci i membri del tuo team e i loro turni",
+    "addStaff": "Aggiungi Personale",
+    "editStaff": "Modifica Personale",
+    "deleteStaff": "Elimina Personale",
+    "deleteConfirm": "Sei sicuro di voler rimuovere questo membro del personale? Questa azione non puo essere annullata.",
+    "searchPlaceholder": "Cerca personale...",
+    "name": "Nome",
+    "email": "Email",
+    "role": "Ruolo",
+    "department": "Reparto",
+    "phone": "Telefono",
+    "shift": "Turno",
+    "status": "Stato",
+    "actions": "Azioni",
+    "active": "Attivo",
+    "inactive": "Inattivo",
+    "onLeave": "In Congedo",
+    "morning": "Mattina",
+    "afternoon": "Pomeriggio",
+    "evening": "Sera",
+    "night": "Notte",
+    "allDepartments": "Tutti i Reparti",
+    "allStatuses": "Tutti gli Stati",
+    "reception": "Reception",
+    "housekeeping": "Pulizie",
+    "restaurant": "Ristorante",
+    "kitchen": "Cucina",
+    "spa": "Spa & Benessere",
+    "maintenance": "Manutenzione",
+    "security": "Sicurezza",
+    "management": "Direzione",
+    "noStaffFound": "Nessun membro del personale trovato",
+    "staffCount": "{{count}} membri del personale"
   },
   "guest": {
     "welcome": "Benvenuto, Ospite",
@@ -57,6 +94,10 @@
     "noResults": "Nessun risultato trovato",
     "back": "Indietro",
     "next": "Avanti",
-    "submit": "Invia"
+    "submit": "Invia",
+    "confirm": "Conferma",
+    "close": "Chiudi",
+    "filter": "Filtra",
+    "all": "Tutti"
   }
 }

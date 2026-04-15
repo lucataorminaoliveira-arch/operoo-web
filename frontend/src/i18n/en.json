@@ -37,7 +37,44 @@
     "addStaff": "Add Staff",
     "newAppointment": "New Appointment",
     "viewReports": "View Reports",
-    "noActivity": "No recent activity"
+    "noActivity": "No recent activity",
+    "viewAll": "View All"
+  },
+  "staff": {
+    "title": "Staff Management",
+    "subtitle": "Manage your team members and their schedules",
+    "addStaff": "Add Staff",
+    "editStaff": "Edit Staff",
+    "deleteStaff": "Delete Staff",
+    "deleteConfirm": "Are you sure you want to remove this staff member? This action cannot be undone.",
+    "searchPlaceholder": "Search staff...",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "department": "Department",
+    "phone": "Phone",
+    "shift": "Shift",
+    "status": "Status",
+    "actions": "Actions",
+    "active": "Active",
+    "inactive": "Inactive",
+    "onLeave": "On Leave",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "night": "Night",
+    "allDepartments": "All Departments",
+    "allStatuses": "All Statuses",
+    "reception": "Reception",
+    "housekeeping": "Housekeeping",
+    "restaurant": "Restaurant",
+    "kitchen": "Kitchen",
+    "spa": "Spa & Wellness",
+    "maintenance": "Maintenance",
+    "security": "Security",
+    "management": "Management",
+    "noStaffFound": "No staff members found",
+    "staffCount": "{{count}} staff members"
   },
   "guest": {
     "welcome": "Welcome, Guest",
@@ -57,6 +94,10 @@
     "noResults": "No results found",
     "back": "Back",
     "next": "Next",
-    "submit": "Submit"
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "close": "Close",
+    "filter": "Filter",
+    "all": "All"
   }
 }
