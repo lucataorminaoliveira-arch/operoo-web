@@ -144,12 +144,15 @@
     "staffCount": "{{count}} staff members"
   },
   "guest": {
-    "welcome": "Welcome, Guest",
-    "subtitle": "Access your services and information",
-    "services": "Services",
-    "info": "Information",
-    "appointments": "My Appointments",
-    "profile": "My Profile"
+    "enterRoom": "Enter your room number",
+    "enterRoomDesc": "To connect with reception, please enter your room number below.",
+    "roomPlaceholder": "e.g. 204",
+    "continue": "Continue",
+    "reception": "Reception",
+    "online": "Online",
+    "room": "Room",
+    "typePlaceholder": "Type a message...",
+    "autoReply": "Thank you for your message. A member of our team will respond shortly."
   },
   "common": {
     "save": "Save",

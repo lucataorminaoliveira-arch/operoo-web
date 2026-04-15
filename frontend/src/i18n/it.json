@@ -144,12 +144,15 @@
     "staffCount": "{{count}} membri del personale"
   },
   "guest": {
-    "welcome": "Benvenuto, Ospite",
-    "subtitle": "Accedi ai tuoi servizi e informazioni",
-    "services": "Servizi",
-    "info": "Informazioni",
-    "appointments": "I Miei Appuntamenti",
-    "profile": "Il Mio Profilo"
+    "enterRoom": "Inserisci il numero della stanza",
+    "enterRoomDesc": "Per contattare la reception, inserisci il numero della tua stanza.",
+    "roomPlaceholder": "es. 204",
+    "continue": "Continua",
+    "reception": "Reception",
+    "online": "Online",
+    "room": "Stanza",
+    "typePlaceholder": "Scrivi un messaggio...",
+    "autoReply": "Grazie per il messaggio. Un membro del nostro team rispondera a breve."
   },
   "common": {
     "save": "Salva",
