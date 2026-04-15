@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import {
@@ -130,10 +130,7 @@ export default function HomePage() {
   const navigate = useNavigate();
   const { user } = useAuth();
 
-  if (user) {
-    navigate('/dashboard', { replace: true });
-    return null;
-  }
+  if (user) return <Navigate to="/dashboard" replace />;
 
   return (
     <div className="min-h-screen bg-background" data-testid="homepage">
