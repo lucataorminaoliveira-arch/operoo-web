@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Logo } from '@/components/Logo';
 import { Send, ArrowLeft } from 'lucide-react';
 
 const mockMessages = [
@@ -23,7 +24,7 @@ function RoomEntry({ onSubmit }) {
     <div className="min-h-screen flex flex-col bg-[hsl(var(--sidebar))]" data-testid="guest-room-entry">
       {/* Header */}
       <header className="border-b bg-card px-5 py-4">
-        <img src="/operoo-logo.png" alt="Operoo" className="h-7 rounded" />
+        <Logo size="sm" />
       </header>
 
       {/* Content */}

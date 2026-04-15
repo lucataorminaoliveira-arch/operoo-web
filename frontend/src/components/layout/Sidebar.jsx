@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
+import { Logo } from '@/components/Logo';
 import {
   LayoutDashboard, Users, Calendar, UserCircle, Megaphone,
   ShoppingBag, LogOut, ChevronLeft, ChevronRight,
@@ -50,7 +51,7 @@ export default function Sidebar({ collapsed, onToggle }) {
       {/* Brand */}
       <div className="flex h-14 items-center justify-between px-4 border-b">
         {!collapsed && (
-          <img src="/operoo-logo.png" alt="Operoo" className="h-7 rounded" data-testid="brand-name" />
+          <Logo size="sm" />
         )}
         <Button
           variant="ghost"

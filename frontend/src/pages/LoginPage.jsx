@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
+import { Logo } from '@/components/Logo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -36,7 +37,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Brand */}
         <div className="text-center mb-8">
-          <img src="/operoo-logo.png" alt="Operoo" className="h-10 rounded" data-testid="login-brand" />
+          <Logo size="lg" />
           <p className="mt-2 text-sm text-muted-foreground">{t('auth.loginSubtitle')}</p>
         </div>
 
