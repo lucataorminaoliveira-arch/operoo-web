@@ -63,6 +63,15 @@
     "yourSchedule": "Il Tuo Programma",
     "todaysTasks": "Attivita di Oggi"
   },
+  "clockIn": {
+    "scanTitle": "Timbra Entrata",
+    "scanInstruction": "Inquadra il QR code per timbrare l'entrata",
+    "success": "Entrata registrata",
+    "successDesc": "Sei ora in turno. Buona giornata!",
+    "clockOutTitle": "Timbra Uscita",
+    "clockOutDesc": "Sei sicuro di voler terminare il turno?",
+    "clockOutConfirm": "Timbra Uscita"
+  },
   "tasks": {
     "title": "Attivita",
     "subtitle": "Le tue attivita e compiti assegnati",

@@ -63,6 +63,15 @@
     "yourSchedule": "Your Schedule",
     "todaysTasks": "Today's Tasks"
   },
+  "clockIn": {
+    "scanTitle": "Clock In",
+    "scanInstruction": "Point your camera at the QR code to clock in",
+    "success": "Clock-in successful",
+    "successDesc": "You are now on shift. Have a great day!",
+    "clockOutTitle": "Clock Out",
+    "clockOutDesc": "Are you sure you want to end your shift?",
+    "clockOutConfirm": "Clock Out"
+  },
   "tasks": {
     "title": "Tasks & Activities",
     "subtitle": "Your assigned tasks and activities",
