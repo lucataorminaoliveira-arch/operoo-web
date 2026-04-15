@@ -150,7 +150,7 @@ function Chat({ roomNumber, onBack }) {
       </div>
 
       {/* Input */}
-      <div className="shrink-0 border-t bg-card px-4 py-3" data-testid="chat-input-area">
+      <div className="shrink-0 border-t bg-card px-4 py-3 pb-5" data-testid="chat-input-area">
         <form onSubmit={sendMessage} className="flex items-center gap-2">
           <Input
             value={input}

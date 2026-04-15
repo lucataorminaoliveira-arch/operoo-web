@@ -1,13 +1,13 @@
 # Operoo - Staff & Guest Management Platform
 
 ## Original Problem Statement
-Build a full web application for Operoo — a Staff and Guest Management Platform for hospitality. Features include authentication (email/password + Google login), role-based dashboards, staff management, appointments, clients, marketing, and shop/orders.
+Build a full web application for Operoo — a Staff and Guest Management Platform for hospitality. Features include authentication, role-based dashboards, staff management, guest QR chat, appointments, clients, marketing, and shop/orders.
 
 ## Core Requirements
 - Responsive layout (desktop/tablet/mobile)
-- Multi-language support (English & Italian)
-- Green color scheme (#7CB342) with Manrope font
-- Guest QR code flow: direct access to guest section without login
+- Multi-language (English & Italian)
+- Green color scheme (#7CB342), Manrope font
+- Guest QR code → direct chat with reception (no login)
 - JWT email/password auth + Emergent Google OAuth
 - Role-based UI: Admin vs Staff views
 
@@ -24,48 +24,53 @@ Build a full web application for Operoo — a Staff and Guest Management Platfor
 - [x] Emergent Google OAuth integration
 - [x] Admin seeding, brute force protection
 - [x] Protected/public routes, i18n (EN/IT)
-- [x] Guest route `/guest/:token`
 
 ### Phase 2 — Admin Dashboard & Staff Management UI (Apr 15, 2026)
-- [x] Admin dashboard: stats cards, quick actions, activity feed, staff overview
-- [x] Staff Management: table, search, filters, add/edit/delete dialogs (MOCK data)
-- [x] Responsive: desktop table + mobile card layout
+- [x] Admin dashboard: stats, quick actions, activity feed, staff overview
+- [x] Staff Management: table, search, filters, add/edit/delete (MOCK data)
 
 ### Phase 3 — Staff Role UI (Apr 15, 2026)
 - [x] Role-based sidebar: Admin (6 items) vs Staff (4 items)
-- [x] Staff Dashboard: today's shift, clock-in/out button, task counts, today's tasks, upcoming events
-- [x] Tasks & Activities: 8 mock tasks, tab filtering, Start/Mark Done status changes
-- [x] Calendar: week view with shifts/appointments, list view toggle, week navigation
-- [x] Profile: personal info, language selector, change password form
-- [x] Route protection: staff cannot access admin routes (redirected to /dashboard)
-- [x] All features use MOCK data (React state only)
+- [x] Staff Dashboard: shift info, clock-in/out, task counts, tasks, events
+- [x] Tasks & Activities: tabs, Start/Mark Done status changes
+- [x] Calendar: week/list views, shift/appointment display
+- [x] Profile: personal info, language selector, change password
+- [x] Route protection: staff blocked from admin routes
+
+### Phase 4 — Guest Chat Flow (Apr 15, 2026)
+- [x] QR code → `/guest/:token` loads directly (no login/homepage)
+- [x] Room number entry screen (clean, mobile-first)
+- [x] Chat with Reception: header with online status, room label
+- [x] Send/receive messages, auto-reply mock
+- [x] Back button returns to room entry
+- [x] No extra sections — chat only
 
 ## Testing Status
-- Phase 1: 100% backend (15/15) + frontend — PASSED
-- Phase 2: 100% frontend (18/18) — PASSED
-- Phase 3: 100% frontend (21/21) — PASSED
+- Phase 1: 100% (15/15 backend + frontend) — PASSED
+- Phase 2: 100% (18/18 frontend) — PASSED
+- Phase 3: 100% (21/21 frontend) — PASSED
+- Phase 4: 100% (17/17 frontend) — PASSED
 
 ## Current State
-- Frontend-only with mock data — user requested to validate UI/UX before backend integration
-- Clock-in/out, tasks, calendar, profile all use React state (not persisted)
+- Frontend complete with mock data
+- All CRUD, chat, clock-in/out use React state (not persisted)
 
 ## Prioritized Backlog
 
 ### P0 — Backend Integration
-- [ ] Staff Management backend API (CRUD endpoints)
-- [ ] Connect Staff UI to backend
-- [ ] Connect dashboard stats to real MongoDB data
-- [ ] Tasks backend API + connect
-- [ ] Clock-in/out backend persistence
+- [ ] Staff CRUD backend API + connect UI
+- [ ] Tasks backend + connect
+- [ ] Clock-in/out persistence
+- [ ] Guest chat backend (WebSocket or polling)
+- [ ] Dashboard stats from real data
 
 ### P1 — New Features
 - [ ] Appointments system (backend + frontend)
 - [ ] Clients database (backend + frontend)
-- [ ] QR code generation for guest access
-- [ ] Guest flow backend (validate tokens, load data)
+- [ ] QR code generation (admin generates QR per property)
 
 ### P2 — Future
-- [ ] Marketing campaigns/promotions
-- [ ] Shop/product catalog & order management
+- [ ] Marketing campaigns
+- [ ] Shop/orders
 - [ ] Reports & analytics
-- [ ] UI polish (animations, micro-interactions)
+- [ ] UI polish
