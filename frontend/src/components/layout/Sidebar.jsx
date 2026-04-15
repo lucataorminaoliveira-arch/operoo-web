@@ -1,22 +1,15 @@
-import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
 import {
-  LayoutDashboard,
-  Users,
-  Calendar,
-  UserCircle,
-  Megaphone,
-  ShoppingBag,
-  LogOut,
-  ChevronLeft,
-  ChevronRight,
+  LayoutDashboard, Users, Calendar, UserCircle, Megaphone,
+  ShoppingBag, LogOut, ChevronLeft, ChevronRight,
+  ListChecks, CalendarDays, User,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const navItems = [
+const adminNav = [
   { key: 'dashboard', icon: LayoutDashboard, path: '/dashboard' },
   { key: 'staff', icon: Users, path: '/staff' },
   { key: 'appointments', icon: Calendar, path: '/appointments' },
@@ -25,10 +18,20 @@ const navItems = [
   { key: 'shop', icon: ShoppingBag, path: '/shop' },
 ];
 
+const staffNav = [
+  { key: 'dashboard', icon: LayoutDashboard, path: '/dashboard' },
+  { key: 'tasks', icon: ListChecks, path: '/tasks' },
+  { key: 'calendar', icon: CalendarDays, path: '/calendar' },
+  { key: 'profile', icon: User, path: '/profile' },
+];
+
 export default function Sidebar({ collapsed, onToggle }) {
   const { t } = useTranslation();
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+
+  const isAdmin = user?.role === 'admin';
+  const navItems = isAdmin ? adminNav : staffNav;
 
   const handleLogout = async () => {
     await logout();
@@ -44,7 +47,7 @@ export default function Sidebar({ collapsed, onToggle }) {
       )}
     >
       {/* Brand */}
-      <div className="flex h-16 items-center justify-between px-4 border-b">
+      <div className="flex h-14 items-center justify-between px-4 border-b">
         {!collapsed && (
           <span className="text-xl font-bold tracking-tight text-primary" data-testid="brand-name">
             Operoo
@@ -61,8 +64,17 @@ export default function Sidebar({ collapsed, onToggle }) {
         </Button>
       </div>
 
+      {/* Role indicator */}
+      {!collapsed && (
+        <div className="px-4 py-2 border-b">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground" data-testid="role-badge">
+            {isAdmin ? 'Admin' : 'Staff'}
+          </span>
+        </div>
+      )}
+
       {/* Navigation */}
-      <nav className="flex-1 py-4 space-y-1 px-2 overflow-y-auto">
+      <nav className="flex-1 py-3 space-y-0.5 px-2 overflow-y-auto">
         {navItems.map(({ key, icon: Icon, path }) => (
           <NavLink
             key={key}

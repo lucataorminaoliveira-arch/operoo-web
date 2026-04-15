@@ -13,10 +13,12 @@ import AppointmentsPage from '@/pages/AppointmentsPage';
 import ClientsPage from '@/pages/ClientsPage';
 import MarketingPage from '@/pages/MarketingPage';
 import ShopPage from '@/pages/ShopPage';
+import TasksPage from '@/pages/TasksPage';
+import CalendarPage from '@/pages/CalendarPage';
+import ProfilePage from '@/pages/ProfilePage';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -24,17 +26,26 @@ function ProtectedRoute({ children }) {
       </div>
     );
   }
+  if (!user) return <Navigate to="/login" replace />;
+  return children;
+}
 
-  if (!user) {
-    return <Navigate to="/login" replace />;
+function AdminRoute({ children }) {
+  const { user, loading } = useAuth();
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-pulse text-muted-foreground">Loading...</div>
+      </div>
+    );
   }
-
+  if (!user) return <Navigate to="/login" replace />;
+  if (user.role !== 'admin') return <Navigate to="/dashboard" replace />;
   return children;
 }
 
 function PublicRoute({ children }) {
   const { user, loading } = useAuth();
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -42,18 +53,14 @@ function PublicRoute({ children }) {
       </div>
     );
   }
-
-  if (user) {
-    return <Navigate to="/dashboard" replace />;
-  }
-
+  if (user) return <Navigate to="/dashboard" replace />;
   return children;
 }
 
 function AppRouter() {
   const location = useLocation();
 
-  // Check URL fragment for session_id (Google OAuth callback) - SYNCHRONOUS, before render
+  // Check URL fragment for session_id (Google OAuth callback) - SYNCHRONOUS
   if (location.hash?.includes('session_id=')) {
     return <AuthCallback />;
   }
@@ -64,17 +71,25 @@ function AppRouter() {
       <Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />
       <Route path="/register" element={<PublicRoute><RegisterPage /></PublicRoute>} />
 
-      {/* Guest route - direct access via QR, no auth required */}
+      {/* Guest route — direct QR access, no auth */}
       <Route path="/guest/:token" element={<GuestPage />} />
 
       {/* Protected routes with layout */}
       <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+        {/* Shared route — renders admin or staff dashboard based on role */}
         <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/staff" element={<StaffPage />} />
-        <Route path="/appointments" element={<AppointmentsPage />} />
-        <Route path="/clients" element={<ClientsPage />} />
-        <Route path="/marketing" element={<MarketingPage />} />
-        <Route path="/shop" element={<ShopPage />} />
+
+        {/* Admin-only routes */}
+        <Route path="/staff" element={<AdminRoute><StaffPage /></AdminRoute>} />
+        <Route path="/appointments" element={<AdminRoute><AppointmentsPage /></AdminRoute>} />
+        <Route path="/clients" element={<AdminRoute><ClientsPage /></AdminRoute>} />
+        <Route path="/marketing" element={<AdminRoute><MarketingPage /></AdminRoute>} />
+        <Route path="/shop" element={<AdminRoute><ShopPage /></AdminRoute>} />
+
+        {/* Staff routes (accessible by all authenticated users) */}
+        <Route path="/tasks" element={<TasksPage />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Route>
 
       {/* Default redirect */}
