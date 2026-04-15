@@ -8,7 +8,8 @@
     "shop": "Shop",
     "tasks": "Tasks",
     "calendar": "Calendar",
-    "profile": "Profile"
+    "profile": "Profile",
+    "team": "Team"
   },
   "auth": {
     "login": "Sign In",
@@ -106,6 +107,30 @@
     "confirmPassword": "Confirm Password",
     "saveChanges": "Save Changes",
     "saved": "Changes saved"
+  },
+  "team": {
+    "title": "Team",
+    "subtitle": "Manage users and roles for your property",
+    "inviteUser": "Invite User",
+    "editMember": "Edit Member",
+    "editDesc": "Update member details and role",
+    "inviteDesc": "Add a new member to your team",
+    "removeMember": "Remove Member",
+    "removeConfirm": "Are you sure you want to remove this member? They will lose access to the system.",
+    "searchPlaceholder": "Search members...",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "department": "Department",
+    "joined": "Joined",
+    "allRoles": "All Roles",
+    "admin": "Admin",
+    "manager": "Manager",
+    "staff": "Staff",
+    "guest": "Guest",
+    "invite": "Send Invite",
+    "noMembers": "No members found",
+    "memberCount": "{{count}} members"
   },
   "staff": {
     "title": "Staff Management",

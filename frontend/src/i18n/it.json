@@ -8,7 +8,8 @@
     "shop": "Negozio",
     "tasks": "Attivita",
     "calendar": "Calendario",
-    "profile": "Profilo"
+    "profile": "Profilo",
+    "team": "Team"
   },
   "auth": {
     "login": "Accedi",
@@ -106,6 +107,30 @@
     "confirmPassword": "Conferma Password",
     "saveChanges": "Salva Modifiche",
     "saved": "Modifiche salvate"
+  },
+  "team": {
+    "title": "Team",
+    "subtitle": "Gestisci utenti e ruoli della struttura",
+    "inviteUser": "Invita Utente",
+    "editMember": "Modifica Membro",
+    "editDesc": "Aggiorna dettagli e ruolo del membro",
+    "inviteDesc": "Aggiungi un nuovo membro al team",
+    "removeMember": "Rimuovi Membro",
+    "removeConfirm": "Sei sicuro di voler rimuovere questo membro? Perdera l'accesso al sistema.",
+    "searchPlaceholder": "Cerca membri...",
+    "name": "Nome",
+    "email": "Email",
+    "role": "Ruolo",
+    "department": "Reparto",
+    "joined": "Iscritto",
+    "allRoles": "Tutti i Ruoli",
+    "admin": "Admin",
+    "manager": "Manager",
+    "staff": "Staff",
+    "guest": "Ospite",
+    "invite": "Invia Invito",
+    "noMembers": "Nessun membro trovato",
+    "memberCount": "{{count}} membri"
   },
   "staff": {
     "title": "Gestione Personale",

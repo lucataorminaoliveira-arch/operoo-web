@@ -13,6 +13,7 @@ import AppointmentsPage from '@/pages/AppointmentsPage';
 import ClientsPage from '@/pages/ClientsPage';
 import MarketingPage from '@/pages/MarketingPage';
 import ShopPage from '@/pages/ShopPage';
+import TeamPage from '@/pages/TeamPage';
 import TasksPage from '@/pages/TasksPage';
 import CalendarPage from '@/pages/CalendarPage';
 import ProfilePage from '@/pages/ProfilePage';
@@ -80,6 +81,7 @@ function AppRouter() {
         <Route path="/dashboard" element={<DashboardPage />} />
 
         {/* Admin-only routes */}
+        <Route path="/team" element={<AdminRoute><TeamPage /></AdminRoute>} />
         <Route path="/staff" element={<AdminRoute><StaffPage /></AdminRoute>} />
         <Route path="/appointments" element={<AdminRoute><AppointmentsPage /></AdminRoute>} />
         <Route path="/clients" element={<AdminRoute><ClientsPage /></AdminRoute>} />

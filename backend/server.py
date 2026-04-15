@@ -176,7 +176,7 @@ async def register(input: RegisterInput, response: Response):
         "email": email,
         "name": input.name.strip(),
         "password_hash": hash_password(input.password),
-        "role": "staff",
+        "role": "admin",
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
     await db.users.insert_one(user_doc)
@@ -185,7 +185,7 @@ async def register(input: RegisterInput, response: Response):
     refresh_token = create_refresh_token(user_id)
     set_auth_cookies(response, access_token, refresh_token)
 
-    return {"user_id": user_id, "email": email, "name": user_doc["name"], "role": "staff"}
+    return {"user_id": user_id, "email": email, "name": user_doc["name"], "role": "admin"}
 
 
 @api_router.post("/auth/login")
@@ -277,7 +277,7 @@ async def google_callback(input: GoogleCallbackInput, response: Response):
             "email": email,
             "name": name,
             "picture": picture,
-            "role": "staff",
+            "role": "admin",
             "created_at": datetime.now(timezone.utc).isoformat(),
         })
 
