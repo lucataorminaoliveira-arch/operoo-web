@@ -16,48 +16,44 @@ Build a full web application for Operoo — a Staff and Guest Management Platfor
 - **Database**: MongoDB (test_database)
 - **Auth**: JWT httpOnly cookies + Emergent Google OAuth
 
-## What's Been Implemented (Phase 1) — Apr 15, 2026
+## What's Been Implemented
 
-### Authentication
+### Phase 1 — Authentication & Foundation (Apr 15, 2026)
 - [x] JWT email/password login & registration
 - [x] Emergent Google OAuth integration
-- [x] Access token (15min) + Refresh token (7day) via httpOnly cookies
+- [x] Access token + Refresh token via httpOnly cookies
 - [x] Admin seeding on startup
-- [x] Brute force protection (5 attempts = 15min lockout)
-- [x] Auth callback for Google OAuth
+- [x] Brute force protection
 - [x] Protected routes + public routes with redirects
+- [x] i18n setup (English & Italian)
+- [x] Guest route `/guest/:token` without auth
 
-### Dashboard
-- [x] Stats cards (Total Staff, Active Guests, Today's Appointments, Revenue)
-- [x] Quick actions (Add Staff, New Appointment, View Reports)
-- [x] Recent activity section
-
-### Navigation & Layout
-- [x] Collapsible sidebar with 6 nav items
-- [x] Top bar with language switcher (EN/IT) + user avatar
-- [x] Mobile responsive with overlay sidebar
-- [x] All nav placeholder pages (Staff, Appointments, Clients, Marketing, Shop)
-
-### i18n
-- [x] English and Italian translations
-- [x] Language persisted in localStorage
-
-### Guest Flow
-- [x] /guest/:token route accessible without auth
-- [x] Guest page with services, appointments, info, profile cards
+### Phase 2 — Dashboard & Staff UI (Apr 15, 2026)
+- [x] Enhanced dashboard: stats cards, quick actions, recent activity feed, staff overview
+- [x] Full Staff Management UI: table with search, department/status filters
+- [x] Staff CRUD: add, edit, delete via dialogs (frontend-only, MOCK data)
+- [x] Responsive: desktop table, mobile card layout, collapsible sidebar
+- [x] Placeholder pages for Appointments, Clients, Marketing, Shop
 
 ## Testing Status
-- Phase 1: 100% backend (15/15) + 100% frontend — PASSED
+- Phase 1: 100% backend (15/15) + frontend — PASSED
+- Phase 2: 100% frontend (18/18) — PASSED
+
+## Current State
+- **Staff CRUD is MOCK** — uses React state with mock data, no backend API
+- **Dashboard stats are MOCK** — hardcoded values, not from MongoDB
+- User requested: validate frontend first, then connect backend step by step
 
 ## Prioritized Backlog
 
-### P0
-- [ ] Staff Management CRUD (list, add, edit, delete staff members)
-- [ ] Dynamic dashboard stats from real data
+### P0 — Next (Backend integration)
+- [ ] Staff Management backend API (CRUD endpoints)
+- [ ] Connect Staff UI to backend APIs
+- [ ] Connect dashboard stats to real MongoDB data
 
 ### P1
-- [ ] Appointments system (create, view, manage bookings)
-- [ ] Clients database with profiles
+- [ ] Appointments system (backend + frontend)
+- [ ] Clients database (backend + frontend)
 - [ ] QR code generation for guest access
 - [ ] Guest flow backend (validate tokens, load guest data)
 
