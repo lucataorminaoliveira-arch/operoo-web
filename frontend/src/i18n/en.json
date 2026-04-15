@@ -9,7 +9,8 @@
     "tasks": "Tasks",
     "calendar": "Calendar",
     "profile": "Profile",
-    "team": "Team"
+    "team": "Team",
+    "frontDesk": "Front Desk"
   },
   "auth": {
     "login": "Sign In",
@@ -107,6 +108,17 @@
     "confirmPassword": "Confirm Password",
     "saveChanges": "Save Changes",
     "saved": "Changes saved"
+  },
+  "frontDesk": {
+    "title": "Front Desk",
+    "subtitle": "Guest conversations",
+    "room": "Room",
+    "table": "Table",
+    "active": "Active",
+    "waiting": "Waiting",
+    "selectChat": "Select a conversation to start",
+    "typePlaceholder": "Type a reply...",
+    "noConversations": "No conversations yet"
   },
   "team": {
     "title": "Team",

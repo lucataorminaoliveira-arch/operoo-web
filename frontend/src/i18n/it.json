@@ -9,7 +9,8 @@
     "tasks": "Attivita",
     "calendar": "Calendario",
     "profile": "Profilo",
-    "team": "Team"
+    "team": "Team",
+    "frontDesk": "Front Desk"
   },
   "auth": {
     "login": "Accedi",
@@ -107,6 +108,17 @@
     "confirmPassword": "Conferma Password",
     "saveChanges": "Salva Modifiche",
     "saved": "Modifiche salvate"
+  },
+  "frontDesk": {
+    "title": "Front Desk",
+    "subtitle": "Conversazioni ospiti",
+    "room": "Stanza",
+    "table": "Tavolo",
+    "active": "Attiva",
+    "waiting": "In attesa",
+    "selectChat": "Seleziona una conversazione",
+    "typePlaceholder": "Scrivi una risposta...",
+    "noConversations": "Nessuna conversazione"
   },
   "team": {
     "title": "Team",

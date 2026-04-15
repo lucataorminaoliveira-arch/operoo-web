@@ -15,6 +15,7 @@ import ClientsPage from '@/pages/ClientsPage';
 import MarketingPage from '@/pages/MarketingPage';
 import ShopPage from '@/pages/ShopPage';
 import TeamPage from '@/pages/TeamPage';
+import FrontDeskPage from '@/pages/FrontDeskPage';
 import TasksPage from '@/pages/TasksPage';
 import CalendarPage from '@/pages/CalendarPage';
 import ProfilePage from '@/pages/ProfilePage';
@@ -85,6 +86,7 @@ function AppRouter() {
         <Route path="/dashboard" element={<DashboardPage />} />
 
         {/* Admin-only routes */}
+        <Route path="/front-desk" element={<AdminRoute><FrontDeskPage /></AdminRoute>} />
         <Route path="/team" element={<AdminRoute><TeamPage /></AdminRoute>} />
         <Route path="/staff" element={<AdminRoute><StaffPage /></AdminRoute>} />
         <Route path="/appointments" element={<AdminRoute><AppointmentsPage /></AdminRoute>} />

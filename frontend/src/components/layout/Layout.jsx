@@ -1,12 +1,17 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import TopBar from './TopBar';
 import { cn } from '@/lib/utils';
 
+const fullScreenRoutes = ['/front-desk'];
+
 export default function Layout() {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+
+  const isFullScreen = fullScreenRoutes.includes(location.pathname);
 
   return (
     <div className="min-h-screen" data-testid="app-layout">
@@ -37,7 +42,7 @@ export default function Layout() {
         )}
       >
         <TopBar onMobileMenuToggle={() => setMobileOpen((o) => !o)} />
-        <main className="p-6">
+        <main className={isFullScreen ? '' : 'p-6'}>
           <Outlet />
         </main>
       </div>
