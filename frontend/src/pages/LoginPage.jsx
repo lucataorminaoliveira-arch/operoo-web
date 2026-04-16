@@ -9,9 +9,11 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
+import { Shield, UserCog, User } from 'lucide-react';
+
 export default function LoginPage() {
   const { t } = useTranslation();
-  const { login, loginWithGoogle, formatApiError } = useAuth();
+  const { login, loginWithGoogle, mockLogin, formatApiError } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -121,6 +123,40 @@ export default function LoginPage() {
             </p>
           </CardFooter>
         </Card>
+
+        {/* Quick Login — Testing Only */}
+        <div className="mt-4 rounded-xl border border-dashed border-muted-foreground/20 p-4" data-testid="quick-login">
+          <p className="text-xs text-center text-muted-foreground mb-3">Quick Login — Testing Only</p>
+          <div className="grid grid-cols-3 gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-9 text-xs gap-1.5"
+              onClick={() => { mockLogin('admin'); navigate('/dashboard', { replace: true }); }}
+              data-testid="mock-admin"
+            >
+              <Shield className="h-3.5 w-3.5" /> Admin
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-9 text-xs gap-1.5"
+              onClick={() => { mockLogin('manager'); navigate('/dashboard', { replace: true }); }}
+              data-testid="mock-manager"
+            >
+              <UserCog className="h-3.5 w-3.5" /> Manager
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-9 text-xs gap-1.5"
+              onClick={() => { mockLogin('staff'); navigate('/dashboard', { replace: true }); }}
+              data-testid="mock-staff"
+            >
+              <User className="h-3.5 w-3.5" /> Staff
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );

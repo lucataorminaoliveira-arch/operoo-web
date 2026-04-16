@@ -70,6 +70,15 @@ export function AuthProvider({ children }) {
     setUser({ user_id: 'mock_google_admin', email: 'admin@operoo.com', name: 'Admin', role: 'admin' });
   };
 
+  const mockLogin = (role) => {
+    const profiles = {
+      admin: { user_id: 'mock_admin', email: 'admin@operoo.com', name: 'Admin', role: 'admin' },
+      manager: { user_id: 'mock_manager', email: 'manager@operoo.com', name: 'Maria Rossi', role: 'manager' },
+      staff: { user_id: 'mock_staff', email: 'staff@operoo.com', name: 'Luca Bianchi', role: 'staff' },
+    };
+    setUser(profiles[role]);
+  };
+
   const processGoogleCallback = async (sessionId) => {
     const { data } = await api.post('/auth/google/callback', { session_id: sessionId });
     setUser(data);
@@ -78,7 +87,7 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, loading, login, register, logout, loginWithGoogle, processGoogleCallback, checkAuth, formatApiError }}
+      value={{ user, loading, login, register, logout, loginWithGoogle, mockLogin, processGoogleCallback, checkAuth, formatApiError }}
     >
       {children}
     </AuthContext.Provider>
