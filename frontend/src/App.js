@@ -45,6 +45,20 @@ function AdminRoute({ children }) {
     );
   }
   if (!user) return <Navigate to="/login" replace />;
+  if (user.role !== 'admin') return <Navigate to="/dashboard" replace />;
+  return children;
+}
+
+function ManagerRoute({ children }) {
+  const { user, loading } = useAuth();
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-pulse text-muted-foreground">Loading...</div>
+      </div>
+    );
+  }
+  if (!user) return <Navigate to="/login" replace />;
   if (user.role !== 'admin' && user.role !== 'manager') return <Navigate to="/dashboard" replace />;
   return children;
 }
@@ -89,15 +103,17 @@ function AppRouter() {
         <Route path="/dashboard" element={<DashboardPage />} />
 
         {/* Admin-only routes */}
-        <Route path="/front-desk" element={<AdminRoute><FrontDeskPage /></AdminRoute>} />
         <Route path="/qr-codes" element={<AdminRoute><QRCodesPage /></AdminRoute>} />
         <Route path="/staff-clockin-qr" element={<AdminRoute><StaffClockInQRPage /></AdminRoute>} />
         <Route path="/team" element={<AdminRoute><TeamPage /></AdminRoute>} />
-        <Route path="/staff" element={<AdminRoute><StaffPage /></AdminRoute>} />
-        <Route path="/appointments" element={<AdminRoute><AppointmentsPage /></AdminRoute>} />
-        <Route path="/clients" element={<AdminRoute><ClientsPage /></AdminRoute>} />
         <Route path="/marketing" element={<AdminRoute><MarketingPage /></AdminRoute>} />
         <Route path="/shop" element={<AdminRoute><ShopPage /></AdminRoute>} />
+
+        {/* Admin + Manager routes */}
+        <Route path="/front-desk" element={<ManagerRoute><FrontDeskPage /></ManagerRoute>} />
+        <Route path="/staff" element={<ManagerRoute><StaffPage /></ManagerRoute>} />
+        <Route path="/appointments" element={<ManagerRoute><AppointmentsPage /></ManagerRoute>} />
+        <Route path="/clients" element={<ManagerRoute><ClientsPage /></ManagerRoute>} />
 
         {/* Staff routes (accessible by all authenticated users) */}
         <Route path="/tasks" element={<TasksPage />} />

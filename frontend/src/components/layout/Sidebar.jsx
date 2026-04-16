@@ -23,6 +23,14 @@ const adminNav = [
   { key: 'shop', icon: ShoppingBag, path: '/shop' },
 ];
 
+const managerNav = [
+  { key: 'dashboard', icon: LayoutDashboard, path: '/dashboard' },
+  { key: 'frontDesk', icon: MessageSquare, path: '/front-desk' },
+  { key: 'staff', icon: Users, path: '/staff' },
+  { key: 'appointments', icon: Calendar, path: '/appointments' },
+  { key: 'clients', icon: UserCircle, path: '/clients' },
+];
+
 const staffNav = [
   { key: 'dashboard', icon: LayoutDashboard, path: '/dashboard' },
   { key: 'tasks', icon: ListChecks, path: '/tasks' },
@@ -35,8 +43,8 @@ export default function Sidebar({ collapsed, onToggle }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  const isAdmin = user?.role === 'admin' || user?.role === 'manager';
-  const navItems = isAdmin ? adminNav : staffNav;
+  const role = user?.role;
+  const navItems = role === 'admin' ? adminNav : role === 'manager' ? managerNav : staffNav;
 
   const handleLogout = async () => {
     await logout();

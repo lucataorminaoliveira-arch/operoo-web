@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useAuth } from '@/contexts/AuthContext';
 import { mockStaff as initialStaff, departments, shifts, statuses } from '@/data/mockData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -26,6 +27,8 @@ const emptyForm = { name: '', email: '', role: '', department: 'reception', phon
 
 export default function StaffPage() {
   const { t } = useTranslation();
+  const { user } = useAuth();
+  const isAdmin = user?.role === 'admin';
   const [staff, setStaff] = useState(initialStaff);
   const [search, setSearch] = useState('');
   const [filterDept, setFilterDept] = useState('all');
@@ -77,10 +80,12 @@ export default function StaffPage() {
           <h1 className="text-2xl font-bold tracking-tight" data-testid="staff-title">{t('staff.title')}</h1>
           <p className="text-sm text-muted-foreground mt-1">{t('staff.subtitle')}</p>
         </div>
-        <Button className="gap-2 shrink-0" onClick={openAdd} data-testid="add-staff-button">
-          <Plus className="h-4 w-4" />
-          {t('staff.addStaff')}
-        </Button>
+        {isAdmin && (
+          <Button className="gap-2 shrink-0" onClick={openAdd} data-testid="add-staff-button">
+            <Plus className="h-4 w-4" />
+            {t('staff.addStaff')}
+          </Button>
+        )}
       </div>
 
       {/* Filters */}
@@ -142,7 +147,7 @@ export default function StaffPage() {
                   <TableHead>{t('staff.department')}</TableHead>
                   <TableHead>{t('staff.shift')}</TableHead>
                   <TableHead>{t('staff.status')}</TableHead>
-                  <TableHead className="text-right pr-4">{t('staff.actions')}</TableHead>
+                  {isAdmin && <TableHead className="text-right pr-4">{t('staff.actions')}</TableHead>}
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -170,23 +175,25 @@ export default function StaffPage() {
                       <TableCell>
                         <Badge variant={statusVariant[member.status]}>{t(`staff.${member.status}`)}</Badge>
                       </TableCell>
-                      <TableCell className="text-right pr-4">
-                        <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon" className="h-8 w-8" data-testid={`staff-actions-${member.id}`}>
-                              <MoreHorizontal className="h-4 w-4" />
-                            </Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent align="end">
-                            <DropdownMenuItem onClick={() => openEdit(member)} data-testid={`edit-${member.id}`}>
-                              <Pencil className="h-3.5 w-3.5 mr-2" /> {t('common.edit')}
-                            </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => openDelete(member)} className="text-destructive" data-testid={`delete-${member.id}`}>
-                              <Trash2 className="h-3.5 w-3.5 mr-2" /> {t('common.delete')}
-                            </DropdownMenuItem>
-                          </DropdownMenuContent>
-                        </DropdownMenu>
-                      </TableCell>
+                      {isAdmin && (
+                        <TableCell className="text-right pr-4">
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <Button variant="ghost" size="icon" className="h-8 w-8" data-testid={`staff-actions-${member.id}`}>
+                                <MoreHorizontal className="h-4 w-4" />
+                              </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                              <DropdownMenuItem onClick={() => openEdit(member)} data-testid={`edit-${member.id}`}>
+                                <Pencil className="h-3.5 w-3.5 mr-2" /> {t('common.edit')}
+                              </DropdownMenuItem>
+                              <DropdownMenuItem onClick={() => openDelete(member)} className="text-destructive" data-testid={`delete-${member.id}`}>
+                                <Trash2 className="h-3.5 w-3.5 mr-2" /> {t('common.delete')}
+                              </DropdownMenuItem>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        </TableCell>
+                      )}
                     </TableRow>
                   ))
                 )}
@@ -211,21 +218,23 @@ export default function StaffPage() {
                       <Badge variant={statusVariant[member.status]} className="text-[10px] px-1.5 py-0">{t(`staff.${member.status}`)}</Badge>
                     </div>
                   </div>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0">
-                        <MoreHorizontal className="h-4 w-4" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuItem onClick={() => openEdit(member)}>
-                        <Pencil className="h-3.5 w-3.5 mr-2" /> {t('common.edit')}
-                      </DropdownMenuItem>
+                  {isAdmin && (
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0">
+                          <MoreHorizontal className="h-4 w-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem onClick={() => openEdit(member)}>
+                          <Pencil className="h-3.5 w-3.5 mr-2" /> {t('common.edit')}
+                        </DropdownMenuItem>
                       <DropdownMenuItem onClick={() => openDelete(member)} className="text-destructive">
                         <Trash2 className="h-3.5 w-3.5 mr-2" /> {t('common.delete')}
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
+                  )}
                 </div>
               ))
             )}
