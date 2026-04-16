@@ -8,8 +8,13 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { Shield, UserCog, User, ArrowRight } from 'lucide-react';
 
-import { Shield, UserCog, User } from 'lucide-react';
+const roles = [
+  { key: 'admin', label: 'Admin', desc: 'Full access', icon: Shield, color: 'bg-primary/10 text-primary border-primary/20 hover:bg-primary/15' },
+  { key: 'manager', label: 'Manager', desc: 'Operations', icon: UserCog, color: 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100' },
+  { key: 'staff', label: 'Staff', desc: 'Tasks & shifts', icon: User, color: 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100' },
+];
 
 export default function LoginPage() {
   const { t } = useTranslation();
@@ -34,22 +39,53 @@ export default function LoginPage() {
     }
   };
 
+  const handleMockLogin = (role) => {
+    mockLogin(role);
+    navigate('/dashboard', { replace: true });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-[hsl(89,30%,96%)] to-[hsl(89,20%,92%)]">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-gradient-to-br from-[hsl(89,30%,96%)] to-[hsl(89,20%,92%)]">
+      <div className="w-full max-w-md space-y-5">
         {/* Brand */}
-        <div className="text-center mb-8">
+        <div className="text-center">
           <Logo size="lg" />
           <p className="mt-2 text-sm text-muted-foreground">{t('auth.loginSubtitle')}</p>
         </div>
 
-        <Card className="shadow-lg border-0" data-testid="login-card">
-          <CardHeader className="text-center pb-2">
-            <CardTitle className="text-xl">{t('auth.welcomeBack')}</CardTitle>
-            <CardDescription>{t('auth.loginSubtitle')}</CardDescription>
-          </CardHeader>
+        {/* ─── Role Selector ─── */}
+        <Card className="shadow-lg border-primary/20 bg-gradient-to-b from-primary/[0.03] to-transparent" data-testid="role-selector">
+          <CardContent className="p-5">
+            <p className="text-sm font-semibold text-center mb-1">Select a role to preview</p>
+            <p className="text-[11px] text-center text-muted-foreground mb-4">Testing only — no login required</p>
+            <div className="grid grid-cols-3 gap-3">
+              {roles.map(({ key, label, desc, icon: Icon, color }) => (
+                <button
+                  key={key}
+                  onClick={() => handleMockLogin(key)}
+                  className={`flex flex-col items-center gap-1.5 rounded-xl border p-3.5 transition-all ${color}`}
+                  data-testid={`mock-${key}`}
+                >
+                  <Icon className="h-6 w-6" />
+                  <span className="text-sm font-semibold">{label}</span>
+                  <span className="text-[10px] opacity-70">{desc}</span>
+                </button>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
-          <CardContent>
+        {/* Divider */}
+        <div className="relative">
+          <Separator />
+          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[hsl(89,25%,94%)] px-3 text-xs text-muted-foreground">
+            or sign in with credentials
+          </span>
+        </div>
+
+        {/* ─── Login Card ─── */}
+        <Card className="shadow-lg border-0" data-testid="login-card">
+          <CardContent className="p-5">
             {/* Google Login */}
             <Button
               variant="outline"
@@ -66,7 +102,7 @@ export default function LoginPage() {
               {t('auth.signInGoogle')}
             </Button>
 
-            <div className="relative my-6">
+            <div className="relative my-5">
               <Separator />
               <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-card px-3 text-xs text-muted-foreground">
                 {t('auth.orContinueWith')}
@@ -114,7 +150,7 @@ export default function LoginPage() {
             </form>
           </CardContent>
 
-          <CardFooter className="justify-center">
+          <CardFooter className="justify-center pb-5">
             <p className="text-sm text-muted-foreground">
               {t('auth.noAccount')}{' '}
               <Link to="/register" className="font-medium text-primary hover:underline" data-testid="register-link">
@@ -123,40 +159,6 @@ export default function LoginPage() {
             </p>
           </CardFooter>
         </Card>
-
-        {/* Quick Login — Testing Only */}
-        <div className="mt-4 rounded-xl border border-dashed border-muted-foreground/20 p-4" data-testid="quick-login">
-          <p className="text-xs text-center text-muted-foreground mb-3">Quick Login — Testing Only</p>
-          <div className="grid grid-cols-3 gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-9 text-xs gap-1.5"
-              onClick={() => { mockLogin('admin'); navigate('/dashboard', { replace: true }); }}
-              data-testid="mock-admin"
-            >
-              <Shield className="h-3.5 w-3.5" /> Admin
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-9 text-xs gap-1.5"
-              onClick={() => { mockLogin('manager'); navigate('/dashboard', { replace: true }); }}
-              data-testid="mock-manager"
-            >
-              <UserCog className="h-3.5 w-3.5" /> Manager
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-9 text-xs gap-1.5"
-              onClick={() => { mockLogin('staff'); navigate('/dashboard', { replace: true }); }}
-              data-testid="mock-staff"
-            >
-              <User className="h-3.5 w-3.5" /> Staff
-            </Button>
-          </div>
-        </div>
       </div>
     </div>
   );
